@@ -21,6 +21,7 @@ El archivo .env ya contiene la configuración de desarrollo. Puede cambiar la cl
     SECRET_KEY=una_clave_para_desarrollo
     ALGORITHM=HS256
     ACCESS_TOKEN_EXPIRE_MINUTES=30
+    CORS_ALLOW_ORIGINS=http://localhost:3000,http://127.0.0.1:3000
 
 ## Base de datos y migraciones
 
@@ -64,6 +65,7 @@ Abra Swagger en http://127.0.0.1:8000/docs.
 - app/schemas/: validación de entradas y respuestas de Pydantic.
 - app/routers/: endpoints organizados por tema.
 - app/dependencies/: autenticación y comprobación de administrador.
+- app/middlewares/: trazabilidad HTTP; asigna `X-Request-ID` y `X-Process-Time-Ms`.
 - app/utils/security.py: hash de contraseñas y JWT.
 - alembic/: configuración e historial de migraciones.
 - create_admin.py: script interactivo para crear el administrador inicial.
